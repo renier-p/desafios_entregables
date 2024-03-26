@@ -1,0 +1,12 @@
+{
+  "name": "desafios-entregables",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --watch desafio_entregable_1/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
