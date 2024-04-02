@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node --watch desafio_entregable_1/app.js"
+    "start": "node --watch desafio_entregable_2/app.js"
   },
   "keywords": [],
   "author": "",
