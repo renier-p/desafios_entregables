@@ -31,31 +31,10 @@ class ProductManager {
     console.log("El producto ha sido agregado correctamente");
   }
 
-  //   saveProducts() {
-  //     const data = JSON.stringify(this.products, null, 2);
-  //     try {
-  //       fs.writeFileSync(this.filePath, data);
-  //       console.log("Producto agregado exitosamente.");
-  //     } catch (error) {
-  //       console.log("Error al agregar el producto.", error);
-  //     }
-  //   }
-
-  //   loadProducts() {
-  //     try {
-  //       const data = fs.readFileSync(this.filePath, "utf8");
-  //       this.products = JSON.parse(data);
-  //       console.log("Productos: ", data);
-  //     } catch (error) {
-  //       this.products = [];
-  //       console.log("Error al cargar los productos", error);
-  //     }
-  //   }
-
   async saveProducts() {
     const data = JSON.stringify(this.products, null, 2);
     try {
-      await fs.writeFile(this.filePath, data); // Escribir de manera asíncrona
+      await fs.writeFile(this.filePath, data);
       console.log(
         "Productos guardados correctamente en el archivo:",
         this.filePath
@@ -122,38 +101,3 @@ class ProductManager {
 }
 
 module.exports = ProductManager;
-
-// async agregarProducto(producto) {
-//     try {
-//       let productos = await this.leerProductos();
-//       productos.push(producto);
-//       await fs.writeFile(
-//         this.productosFile,
-//         JSON.stringify(productos, null, 2)
-//       );
-//     } catch (error) {
-//       console.log("Error al agregar el producto", error);
-//     }
-//   }
-
-//   async consultarProducto() {
-//     try {
-//       return await this.leerProductos();
-//     } catch (error) {
-//       console.log("Error al consultar productos", error);
-//       return [];
-//     }
-//   }
-
-//   async leerProductos() {
-//     try {
-//       const data = await fs.readFile(this.productosFile, "utf8");
-//       return JSON.parse(data);
-//     } catch (error) {
-//       if (error.code === "ENOENT") {
-//         return [];
-//       } else {
-//         throw error;
-//       }
-//     }
-//   }
