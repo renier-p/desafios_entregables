@@ -1,35 +1,24 @@
 [
   {
+    "id": 1,
+    "title": "Auto",
+    "description": "Automovil AUDI",
+    "price": "12000",
+    "category": "automovil",
+    "status": true,
+    "thumbnail": "auto.jpg",
+    "code": "A01",
+    "stock": "6"
+  },
+  {
     "id": 3,
-    "title": "telefono",
-    "description": "samsung",
-    "price": "100",
-    "category": "electronicos",
+    "title": "Camioneta ",
+    "description": "SUV BMW",
+    "price": "17000",
+    "category": "camioneta",
     "status": true,
-    "thumbnail": "image.jpg",
-    "code": "T01",
-    "stock": "500"
-  },
-  {
-    "id": 4,
-    "title": "impresora",
-    "description": "impresora",
-    "price": "250",
-    "category": "electronicos",
-    "status": true,
-    "thumbnail": "image2.jpg",
-    "code": "I01",
-    "stock": "100"
-  },
-  {
-    "id": 6,
-    "title": "televisor",
-    "description": "televisor",
-    "price": "330",
-    "category": "electronicos",
-    "status": true,
-    "thumbnail": "image4.jpg",
-    "code": "T02",
-    "stock": "20"
+    "thumbnail": "suv.jpg",
+    "code": "S01",
+    "stock": "4"
   }
 ]
