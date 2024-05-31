@@ -5,14 +5,23 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node --watch desafio_entregable_4/src/app.js"
+    "start": "node --watch desafio_entregable_5/src/app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "connect-mongo": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "express-handlebars": "^7.1.2",
+    "express-sessions": "^1.0.6",
+    "mongoose": "^8.4.0",
+    "passport": "^0.7.0",
+    "session-file-store": "^1.5.0",
     "socket.io": "^4.7.5"
   }
 }
