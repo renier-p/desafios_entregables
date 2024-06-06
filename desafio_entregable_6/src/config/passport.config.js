@@ -7,21 +7,25 @@ import { createHash, isValidPassword } from '../utils.js';
 const initializePassport = () => {
   passport.use('login', new LocalStrategy(
     { usernameField: 'email' },
-    async (email, password, done) => {
+    async (email, password,profile, done) => {
       try {
+        console.log(profile);
         const user = await userService.findOne({ email });
-        if (!user) {
-          return done(null, false, { message: 'Incorrect email.' });
+            if (!user) {
+                return done(null, false, { message: 'Usuario no encontrado' });
+            }
+            if (!isValidPassword(user, password)) {
+                return done(null, false, { message: 'Contraseña incorrecta' });
+            }
+            // Verifica las credenciales del administrador
+            if (email === 'adminCoder@coder.com' && password === 'adminCod3r123') {
+                user.role = 'admin';
+            }
+            return done(null, user);
+        } catch (error) {
+            return done(error);
         }
-        if (!isValidPassword(user, password)) {
-          return done(null, false, { message: 'Incorrect password.' });
-        }
-        return done(null, user);
-      } catch (err) {
-        return done(err);
-      }
-    }
-  ));
+    }));
 
   passport.use('github', new GitHubStrategy({
     clientID: "Iv23li4KnTef54WYz6rG",
