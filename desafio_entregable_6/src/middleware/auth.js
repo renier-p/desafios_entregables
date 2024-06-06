@@ -1,5 +1,5 @@
 export const isAuthenticated = (req, res, next) => {
-    if (req.session.user) {
+    if (req.isAuthenticated()) {
         return next();
     } else {
         res.redirect('/login');
@@ -7,7 +7,7 @@ export const isAuthenticated = (req, res, next) => {
 };
 
 export const isNotAuthenticated = (req, res, next) => {
-    if (!req.session.user) {
+    if (!req.isAuthenticated()) {
         return next();
     } else {
         res.redirect('/products');
@@ -15,9 +15,11 @@ export const isNotAuthenticated = (req, res, next) => {
 };
 
 export const isAdmin = (req, res, next) => {
-    if (req.session.user && req.session.user.role === 'admin') {
+    if (req.isAuthenticated() && req.user.role === 'admin') {
         return next();
     } else {
         res.status(403).send('Forbidden');
     }
 };
+
+
