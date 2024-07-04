@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/assets/style.css">
+    <link rel="stylesheet" href="/CSS/assets/cart.css">
+    <title>Carrito</title>
+</head>
 <body>
     {{#if user}}
         <h3 style="margin-top: 25px; color: white" class="text-center">Bienvenido, 
@@ -8,9 +17,9 @@
         </h3>
     {{else}}
         <p style="text-align: center; margin-top:25px; color:white">
-        Inicia sesión para poder comprar!
-        <a style="background-color: #ff6600; color: white;border: 1px solid #ff6600; border-radius: 6px; margin-left: 10px " href="/login" class="btn btn-info">Iniciar</a>
-    </p>
+            Inicia sesión para poder comprar!
+            <a style="background-color: #ff6600; color: white;border: 1px solid #ff6600; border-radius: 6px; margin-left: 10px" href="/login" class="btn btn-info">Iniciar</a>
+        </p>
     {{/if}} 
     <div id="cart" data-cart-id="{{cart._id}}" class="container mt-5">
         <h3 style="color:white" class="text-center">Carrito ID: {{cart._id}}</h3>
@@ -29,48 +38,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {{!-- {{#each cart.products}}
-                            <tr style="color: white">
-                                <td>
-                                    <a href="/products/{{product._id}}">
-                                        <img class="cartImage" src="{{this.product.thumbnail}}" alt="{{this.product.description}}">
-                                    </a>
-                                    
-                                </td>
-                                <td>{{this.product.title}}</td>
-                                <td>{{this.product.description}}</td>
-                                <td>${{this.product.price}}</td>
-                                <td>
-                                    <div class="btn-group" role="group" aria-label="Basic example">
-                                        <span class="mx-2">{{this.quantity}}</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <button style="background-color: #ff6600; color: white; padding: 10px 20px; border-radius: 6px; border: 1px solid #ff6600" type="button" class="btn" onclick="removeFromCart('{{../cart._id}}', '{{this.product._id}}')">Eliminar</button>
-                                </td>
-                            </tr>
-                            {{/each}} --}}
-
                             {{#each cart.products}}
-<tr style="color: white">
-    <td>
-        <a href="/products/{{product._id}}">
-            <img class="cartImage" src="{{this.product.thumbnail}}" alt="{{this.product.description}}">
-        </a>
-    </td>
-    <td>{{this.product.title}}</td>
-    <td>{{this.product.description}}</td>
-    <td>${{this.product.price}}</td>
-    <td>
-        <div class="btn-group" role="group" aria-label="Basic example">
-            <span class="mx-2">{{this.quantity}}</span>
-        </div>
-    </td>
-    <td>
-        <button style="background-color: #ff6600; color: white; padding: 10px 20px; border-radius: 6px; border: 1px solid #ff6600" type="button" class="btn" onclick="removeFromCart('{{../cart._id}}', '{{this.product._id}}')">Eliminar</button>
-    </td>
-</tr>
-{{/each}}
+                                <tr style="color: white">
+                                    <td>
+                                        <a href="/products/{{product._id}}">
+                                            <img class="cartImage" src="{{this.product.thumbnail}}" alt="{{this.product.description}}">
+                                        </a>
+                                    </td>
+                                    <td>{{this.product.title}}</td>
+                                    <td>{{this.product.description}}</td>
+                                    <td>${{this.product.price}}</td>
+                                    <td>
+                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                            <span class="mx-2">{{this.quantity}}</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button style="background-color: #ff6600; color: white; padding: 10px 20px; border-radius: 6px; border: 1px solid #ff6600" type="button" class="btn" onclick="removeFromCart('{{../cart._id}}', '{{this.product._id}}')">Eliminar</button>
+                                    </td>
+                                </tr>
+                            {{/each}}
                         </tbody>
                     </table>
                 </div>
@@ -85,7 +72,7 @@
             </div>
         {{else}}
             <div class="col text-end">
-                <h2 class="text-center mt-4">No tienes productos en tu carrito </h2>
+                <h2 class="text-center mt-4">No tienes productos en tu carrito</h2>
                 <a style="background-color: #ff6600; color: white; padding: 10px 20px; border-radius: 6px; border: 1px solid #ff6600" class="btn btn-info" href="/">Seguir Comprando</a>
             </div>
         {{/if}}
@@ -93,3 +80,4 @@
     <script src="/js/cart.js"></script>
     <script src="/js/main.js"></script>
 </body>
+</html>
