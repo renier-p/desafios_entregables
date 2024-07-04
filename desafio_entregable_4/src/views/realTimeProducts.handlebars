@@ -1,0 +1,100 @@
+<form id="formProduct">
+  <h2>Real Time Products</h2>
+
+  {{! Nombre del Producto }}
+  <div>
+    <label for="title">Nombre del Producto:</label>
+    <input type="text" name="title" id="title" required />
+  </div><br />
+
+  {{! Descripción  }}
+  <div>
+    <label for="description">Descripción:</label>
+    <input type="text" name="description" id="description" required />
+  </div><br />
+
+  {{! Stock  }}
+  <div>
+    <label for="stock">Stock:</label>
+    <input type="number" name="stock" id="stock" required />
+  </div><br />
+
+  {{! Imagen }}
+  <div>
+    <label for="thumbnail">Imagen:</label>
+    <input
+      type="text"
+      name="thumbnail"
+      id="thumbnail"
+      placeholder="image.jpg"
+      required
+    />
+  </div><br />
+
+  {{! Categoría  }}
+  <div>
+    <label for="category">Categoría:</label>
+    <input
+      class="form-control"
+      type="text"
+      name="category"
+      id="category"
+      required
+    />
+  </div><br />
+
+  {{! Precio }}
+  <div>
+    <label for="price">Precio:</label>
+    <input type="number" name="price" id="price" placeholder="$" required />
+  </div><br />
+
+  {{! Estado }}
+  <div>
+    <input
+      name="status"
+      type="checkbox"
+      value="true"
+      id="flexCheckChecked"
+      checked
+    />
+    <label for="flexCheckChecked">Estado:</label>
+  </div><br />
+
+  {{! Código }}
+  <div>
+    <label for="code">Código:</label>
+    <input
+      type="text"
+      name="code"
+      id="code"
+      placeholder="inicial+numero"
+      required
+    />
+  </div><br />
+
+  {{! Botón Registrar }}
+  <div>
+    <button type="submit" id="add-btn">Registrar producto
+    </button>
+  </div><br />
+
+  <h2>Eliminar Producto:</h2>
+
+  {{! ID del Producto a Eliminar }}
+  <div>
+    <label for="id-prod">ID del Producto:</label>
+    <input type="number" name="id-prod" id="id-prod" placeholder="ej: 1" />
+  </div><br />
+
+  {{! Botón Eliminar }}
+  <div>
+    <button type="button" id="delete-btn">Eliminar producto</button>
+  </div>
+</form><br />
+
+<div id="list-products">
+
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/realtime.js"></script>

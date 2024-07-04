@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "title": "Auto",
+    "description": "Automovil AUDI",
+    "price": "12000",
+    "category": "automovil",
+    "status": true,
+    "thumbnail": "auto.jpg",
+    "code": "A01",
+    "stock": "6"
+  },
+  {
+    "id": 3,
+    "title": "Camioneta ",
+    "description": "SUV BMW",
+    "price": "17000",
+    "category": "camioneta",
+    "status": true,
+    "thumbnail": "suv.jpg",
+    "code": "S01",
+    "stock": "4"
+  }
+]

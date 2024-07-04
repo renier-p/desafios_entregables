@@ -1,0 +1,14 @@
+<div style="border: 1px solid black;
+            padding: 20px; width: 250px; border-radius:5px; margin-left: 20px; margin-top:25px">
+    <h2>Iniciar Sesión</h2>
+    <form action="/api/sessions/login" method="POST">
+         <label style="margin-top: 10px" for="email">Email:</label>
+         <input style="margin-top: 10px" type="email" name="email" required>
+         <label style="margin-top: 10px" for="password">Contraseña:</label>
+         <input style="margin-top: 10px"type="password" name="password" required>
+         <button style="margin-top: 10px; height: 30px; width: 100px; border-radius: 5px ; background-color: #ff6600; color: white; cursor:pointer" type="submit">Ingresar</button>
+    </form>
+    <a href="/api/sessions/github"><button style="height: 30px; width: 100px; border-radius: 5px ; background-color: #ff6600; color: white; margin-top: 10px; cursor:pointer">GitHub</button></a>
+
+    <a href="/register"><button style="height: 30px; width: 100px; border-radius: 5px ; background-color: #ff6600; color: white; margin-top: 10px; cursor:pointer">Registrarse</button></a>
+</div>

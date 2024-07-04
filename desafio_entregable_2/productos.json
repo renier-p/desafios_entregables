@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Camisa",
+    "description": "Camisa de Red Hot Chili Peppers",
+    "price": 2000,
+    "thumbnail": "img/camisa/camisa_rhcp.jpg",
+    "code": "c001",
+    "stock": 8,
+    "id": 1
+  },
+  {
+    "title": "Llavero",
+    "description": "Llavero de Red Hot Chili Peppers",
+    "price": 1000,
+    "thumbnail": "img/llavero/llavero_rhcp.jpg",
+    "code": "l001",
+    "stock": 10,
+    "id": 2
+  }
+]

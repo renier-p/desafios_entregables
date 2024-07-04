@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Productos</title>
+</head>
+<body>
+    <div style="border: 1px solid black;
+            padding: 20px; width: 250px; border-radius:5px; margin-left: 20px; margin-top:25px">
+        <h1>Bienvenido, {{user.first_name}} {{user.last_name}}</h1>
+        <h2>Role: {{user.role}}</h2>
+        <p>Nombre: {{user.first_name}}</p>
+        <p>Apellido: {{user.last_name}}</p>
+        <p>Email: {{user.email}}</p>
+        <p>Edad: {{user.age}}</p>
+        <p>Role: {{user.role}}</p>  
+        <a href="/api/sessions/logout"><button style="height: 30px; width: 100px; border-radius: 5px ; background-color: #ff6600; color: white; cursor:pointer">Logout</button></a>
+    </div>
+</body>
+</html>
