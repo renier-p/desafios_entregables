@@ -118,7 +118,8 @@ app.set("view engine", "handlebars");
 
 // Rutas
 app.use('/', viewsRoutes); // Asegúrate de que las rutas de vistas están primero si no tienen prefijo
-app.use("/api/products", productRoutes); // Asegúrate de usar un prefijo adecuado para las rutas de productos
+app.use("/api/products", productRoutes);  //REVISAR EL OTRO RENDER DE PRODUCTS
+// app.use("/api", productRoutes);  //REVISAR EL OTRO RENDER DE PRODUCTS
 app.use("/api/carts", cartRouter);
 app.use('/api/sessions', sessionsRouter);
 

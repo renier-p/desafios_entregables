@@ -201,6 +201,7 @@
 // };
 
 import CartService from '../services/cartService.js';
+import Cart from "../models/carts.model.js"
 
 const cartService = new CartService();
 
@@ -227,16 +228,40 @@ const getCartById = async (req, res) => {
 };
 
 // Nuevo método para renderizar la vista del carrito
-const renderCart = async (req, res) => {
+// const renderCart = async (req, res) => {
+//     try {
+//         const cart = await cartService.getCartById(req.params.cid);
+//         if (cart) {
+//             res.render('cart', { cart, user: req.session.user });
+//         } else {
+//             res.status(404).render('notFound', { pageNotFound: '/cart' });
+//         }
+//     } catch (error) {
+//         res.status(500).render('error', { message: 'Error del servidor' });
+//     }
+// };
+
+const getPopulatedCart = async (cartId) => {
     try {
-        const cart = await cartService.getCartById(req.params.cid);
+        const cart = await Cart.findById(cartId).populate('products.product').lean()
+        return cart
+    } catch (error) {
+        throw new Error('Error al obtener el carrito')
+    }
+}
+
+const renderCart = async (req, res) => {
+    const cartId = req.params.cid
+    try {
+        const cart = await getPopulatedCart(cartId)
+        console.log(cart);
         if (cart) {
             res.render('cart', { cart, user: req.session.user });
         } else {
             res.status(404).render('notFound', { pageNotFound: '/cart' });
         }
     } catch (error) {
-        res.status(500).render('error', { message: 'Error del servidor' });
+        res.status(500).render('cart', { message: 'Error del servidor' });
     }
 };
 
